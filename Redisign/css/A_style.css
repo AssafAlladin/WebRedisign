@@ -21,8 +21,8 @@ body {
     --col-10: calc(var( --grid) * 10);
     --col-11: calc(var( --grid) * 11);
 	--col-12: calc(var( --grid) * 12);
-	--primary: black;
-	--secondary: #e0cba2;
+	--primary: red;
+	--secondary: #ccc;
 }
 .container {
     width: 100%;
@@ -73,12 +73,12 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: black;
-	height: 100px;
+	height: 50px;
 	padding: 0 10px;
 }
 .button {
-    height: 60%;
-	width: 13%;
+	height: 50px;
+	width: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -91,9 +91,13 @@ header {
 	width: 70%;
 	margin: 8% 0;
 }
-img {
-	max-width: 100%;
-	height: auto;
+.logo {
+	height: 70%;
+	width: 40%;
+}
+.home {
+	width: 100%;
+	height: 150px;
 }
 div a {
 	color: white;
@@ -111,15 +115,19 @@ nav {
 	align-items: center;
 	padding: 20px 0;
 }
-nav ul li {
-	font-size: 1.5rem;
-	margin: 20px 0;
+.hidden {
+	display: none;
 }
-nav ul li a {
+.outside li {
+	font-size: 1.5rem;
+	margin: 20px 0 0 20px;
+}
+.outside li a {
 	color: white;
 	text-decoration: none;
 }
-nav .outside {
+.outside {
+	padding: 10px 0;
 	list-style: none;
 }
 .down {
@@ -127,7 +135,7 @@ nav .outside {
 	padding-left: 10px;
 	cursor: pointer;
 }
-nav ul li .inside {
+nav .outside li .inside {
 	display: none;
 }
 /*End Nav*/
@@ -139,14 +147,17 @@ main div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid var(--primary);
+	background-color: var(--primary);
 	height: 40px;
 	width: 150px;
 	margin: auto;
 	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px;
+	text-transform: uppercase;
 }
 main div a {
-	color: var(--primary);
+	color: white;
 	text-decoration: none;
 	font-size: 1.3rem;
 }
@@ -297,6 +308,16 @@ input {
 .option .pick div select {
 	width: 60%;
 	height: 30px;
+}
+.confirm {
+	text-align: center;
+}
+.confirm button {
+	padding: 10px 40px;
+	font-size: 1.8rem;
+	border: none;
+	background-color: red;
+	border-radius: 5px;
 }
 /*End option page*/
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12,
@@ -456,6 +477,15 @@ input {
 		flex: 0 0 var(--col-12);
 		max-width: var(--col-12);
 	}
+	.logo {
+		height: 40px;
+		width: 290px;
+		max-width: 400px;
+	}
+	.button {
+		height: 50px;
+		width: 50px;
+	}
 }
 @media screen and (min-width: 992px) {
 	.col-lg-1 {
@@ -505,6 +535,45 @@ input {
 	.col-lg-12 {
 		flex: 0 0 var(--col-12);
 		max-width: var(--col-12);
+	}
+	.home {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	.button {
+		display: none;
+	}
+	nav{
+		display: none;
+	}
+	header .hidden {
+		display: inline-block;
+	}
+	header .hidden .outside {
+		margin-top: 30px;
+	}
+	header .hidden .outside li .inside {
+		display: none;
+		position: absolute;
+		background-color: black;
+		padding: 10px 10px;
+		opacity: 0.8;
+		border-radius: 0 0 5px 5px;
+	}
+	header .hidden .outside li .inside li {
+		padding: 0 10px;
+		border-right: 1px solid white;
+	}
+	header .hidden .outside li .inside li:nth-child(6) {
+		border-right: none
+	}
+	header .hidden li{
+		display: inline;
+	}
+
+	.logo {
+		width: 10%;
 	}
 }
 @media screen and (min-width: 1200px) {
