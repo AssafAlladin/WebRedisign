@@ -77,28 +77,20 @@ nav {
     align-items: center;
     align-content: flex-start;
     padding: calc(1rem / 1.618);
-	background-color: var(--primary);
-	box-shadow: 0 0 0 2px;
-	position: fixed;
-	width: 100%;
-	margin-bottom: 10%;
+    background-color: var(--primary);
 }
 nav .open {
     display: block !important;
     transition: .5s ease;
 }
+.logo {
+	flex: 1 1 20%;
+}
 nav .navbar-brand {
-    flex: 1 1 70%;
-    max-width: 70%;
-    background-image: url(images/Alfredos-logo.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: contain;
-    background-color: transparent;
-    display: block;
     overflow: hidden;
     width: 100%;
     height: 3rem;
+    text-indent: -9999999999px;
     margin-bottom: 1rem;
 }
 nav .navbar-toggler {
@@ -112,17 +104,17 @@ nav .navbar-toggler {
 nav .navbar-collapse {
     flex: 1 1 100%;
     max-width: 100%;
-	display: none;
+    display: none;
 }
-nav .navbar-collapse .navbar-nav
+nav .navbar-collapse .navbar-nav,
+nav .navbar-collapse .navbar-nav .nav-item.dropdown .dropdown-menu
 {
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 nav .navbar-collapse .navbar-nav .nav-item.dropdown .dropdown-menu {
-	display: none;
-	list-style-type: none;
+    display: none;
 }
 nav .navbar-collapse .navbar-nav .nav-item {
 
@@ -133,15 +125,14 @@ nav .navbar-collapse .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-ite
     padding: calc(1em / 1.618);
     display: block;
     overflow: hidden;
-	text-decoration: none;
+    text-decoration: none;
 }
 nav .navbar-collapse .navbar-nav .nav-item .nav-link {
     color: var(--third);
 }
 nav .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
     background-color: red;
-	color: white;
-	border-radius: 5px 5px;
+    color: white;
 }
 
 nav .navbar-collapse .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item .dropdown-link {
@@ -165,6 +156,15 @@ nav .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle:after {
 
 nav .navbar-collapse .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item {
 
+}
+.top {
+	display: flex;
+	align-items: center;
+}
+.sign a {
+	color: var(--third);
+	text-decoration: none;
+	margin: 0 5px;
 }
 /*End Header + Nav*/
 /*Home Page*/
@@ -577,13 +577,10 @@ input {
         display: none;
     }
     nav .navbar-brand {
-        flex: 0 0 130px;
-        max-width: 130px;
-        background-color: tomato;
     }
     nav .navbar-collapse {
-        flex: 1 1 calc(100% - 130px);
-        max-width: calc(100% - 130px);
+        flex: 1 1 50px;
+        max-width: 450px;
         display: block;
     }
     nav .navbar-collapse .navbar-nav {
@@ -709,6 +706,7 @@ input {
 footer {
 	background-color: var(--third);
 	padding: 10px 0;
+	color: white;
 }
 footer .navbar-collapse {
 	display: flex;
