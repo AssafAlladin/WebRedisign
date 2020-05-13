@@ -1,7 +1,6 @@
 $(function() {
     let menuToggler = $("nav button.navbar-toggler");
     let dropdownToggler = $("a.nav-link.dropdown-toggle");
-    let animate = $(".submit");
 
     menuToggler.on("click", function(e) {
         e.preventDefault();
@@ -13,7 +12,4 @@ $(function() {
         e.preventDefault();
         $(this).siblings().toggleClass("open");
     });
-    animate.on("click", function() {
-        $(this).animate({borderBox: '0 0 0'})
-    })
 });
